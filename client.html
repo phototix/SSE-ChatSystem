@@ -1,4 +1,15 @@
-<video id="clientVideo" autoplay controls></video>
+<video id="clientVideo" autoplay controls>
+    <source src="your-video-file.webm" type="video/webm">
+    <source src="your-video-file.mp4" type="video/mp4">
+    
+    <!-- Provide audio fallback for unsupported video formats -->
+    <audio controls>
+        <source src="your-audio-file.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    Your browser does not support the video tag.
+</video>
 <script>
 const videoElement = document.getElementById('clientVideo');
 const roomId = new URLSearchParams(window.location.search).get('id');
