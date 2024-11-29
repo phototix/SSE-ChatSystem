@@ -1,0 +1,297 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cons",
+				"console"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"border",
+				"border-bottom"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/brandonchong/Documents/GitHub/SSE-ChatSystem"
+	],
+	"file_history":
+	[
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/96844131-room-status.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/1002001-room-status.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/2004208-room-status.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/room.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/chat.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/explore.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/index.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/login.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/me.html",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/room.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/script/loader.js",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/142903999-room-status.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/explore.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/index.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/.gitignore",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/1002001-chat-history.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/142903999-chat-history.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/96844131-user.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/script/announcement.js",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/cache/effect_annoucement.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/chat.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/me.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/login.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/script/app.js",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/script/login.js",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/README.md",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/assets/css/style.css",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/chat-history.json",
+		"/C/Users/brandonchong/Documents/GitHub/voice-livechat-web/room-status.json",
+		"/C/Users/brandonchong/OneDrive/Documents/KMSKPS/AWS-EC2-Cloud-Personal/voice-chat-web/index.html",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/app/Yantrana/Components/WhatsAppService/Services/WhatsAppConnectApiService.php",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/app/Yantrana/Components/WhatsAppService/Services/WhatsAppApiService.php",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/app/Yantrana/Components/WhatsAppService/Controllers/WhatsAppServiceController.php",
+		"/C/Users/brandonchong/Documents/GitHub/ezchat-v1/pages/dashboard/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/app/Yantrana/Components/Vendor/VendorEngine.php",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/app/Yantrana/Components/Vendor/Controllers/VendorController.php",
+		"/C/Users/brandonchong/Documents/GitHub/whatsjet-ezchat/routes/web.php",
+		"/C/Users/brandonchong/OneDrive/Documents/KMSKPS/AWS-EC2-Cloud-Personal/kmspks-s3/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/views/shop/pos/index.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/js/stores/MasterStore.js",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/js/stores/BasketStore.js",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/js/pages/ProductDetails.vue",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/app/Http/Resources/SizeResource.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/app/Http/Resources/ProductResource.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/app/Http/Controllers/API/ProductController.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/js/pages/ShopDetails.vue",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/resources/js/pages/ContactUs.vue",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/app/Http/Controllers/Shop/ProductController.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/resources/views/layouts/app.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/ordernow-v2/app/Http/Controllers/API/HomeController.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/resources/views/auth/register.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/resources/views/auth/login.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/resources/views/admin/membership/index.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/resources/views/frontend/layouts/footer.blade.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/complete_order/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/gkash-receipt/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/modules/generateQR.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/layouts/footer.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/terms/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/privacy/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/controller/define.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/update_coin.php",
+		"/C/Users/brandonchong/Documents/GitHub/alumni-system/public/frontend/scss/style.css",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/controller/functions.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/phpinfo.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/complete_account/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/merchant/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/layouts/header.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/login/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/pages/index.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/modules/checkCoupon.php",
+		"/C/Users/brandonchong/Documents/GitHub/checkinpay/sftp-config.json",
+		"/C/Users/brandonchong/Downloads/PortableApps/SublimeText3/Data/Packages/User/SFTP.errors.log",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/events/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/register/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/home/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/composer.json",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/assets/css/style.css",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/controllers/conn.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/about/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/kmspks-app/pages/contact/index.php",
+		"/C/Users/brandonchong/Downloads/PortableApps/XAMPP/htdocs/index.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/kmspks-s3/index.php",
+		"/C/Users/brandonchong/Downloads/portableapps/XAMPP/apache/conf/extra/httpd-vhosts.conf",
+		"/C/Users/brandonchong/Downloads/portableapps/XAMPP/apache/conf/httpd.conf",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/kmspks-s3/bootstrap.html",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/index.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/kmspks-s3/index.html",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/kmspks-s3/sftp-config.json",
+		"/C/Users/brandonchong/Downloads/portableapps/XAMPP/htdocs/index.php",
+		"/C/Users/brandonchong/Downloads/image.html",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/chat/index.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/chat/assets/js/presetMessage.js",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/chat/chat_preset.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/chat/chat_history.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/assets/js/presetMessage.js",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/preset_buttons.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/chat.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/bootstrap.php",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/sftp-config.json",
+		"/C/Users/brandonchong/Downloads/Documents/KMSKPS/AWS-EC2-Cloud-Personal/home-root/chat_backup.php"
+	],
+	"find":
+	{
+		"height": 27.2
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.2
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SFTP":
+	{
+		"height": 126.400001526
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "SSE-Chat.sublime-project",
+	"replace":
+	{
+		"height": 51.2
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
