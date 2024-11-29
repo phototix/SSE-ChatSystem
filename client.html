@@ -1,13 +1,24 @@
-<video id="clientVideo" autoplay></video>
+<video id="clientVideo" autoplay controls></video>
 <script>
 const videoElement = document.getElementById('clientVideo');
 const roomId = new URLSearchParams(window.location.search).get('id');
+
+// Create a MediaSource object
+const mediaSource = new MediaSource();
+videoElement.src = URL.createObjectURL(mediaSource);
+
+let sourceBuffer;
+mediaSource.addEventListener('sourceopen', () => {
+    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"'); // Adjust codec if necessary
+});
 
 setInterval(() => {
     fetch(`/fetch-video.php?room_id=${roomId}`)
         .then((response) => response.blob())
         .then((blob) => {
-            videoElement.src = URL.createObjectURL(blob);
+            if (sourceBuffer && !sourceBuffer.updating) {
+                sourceBuffer.appendBuffer(blob); // Append the video blob to the buffer
+            }
         });
-}, 2000); // Fetch new video every 2 seconds.
+}, 2000); // Fetch new video every 2 seconds
 </script>
