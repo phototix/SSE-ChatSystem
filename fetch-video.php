@@ -1,5 +1,7 @@
 <?php
 // fetch-video.php
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: video/webm');
 
 // Ensure the room_id is passed correctly
 $roomId = $_GET['room_id'];
