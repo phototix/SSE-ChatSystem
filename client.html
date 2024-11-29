@@ -1,0 +1,13 @@
+<video id="clientVideo" autoplay></video>
+<script>
+const videoElement = document.getElementById('clientVideo');
+const roomId = new URLSearchParams(window.location.search).get('id');
+
+setInterval(() => {
+    fetch(`/fetch-video.php?room_id=${roomId}`)
+        .then((response) => response.blob())
+        .then((blob) => {
+            videoElement.src = URL.createObjectURL(blob);
+        });
+}, 2000); // Fetch new video every 2 seconds.
+</script>

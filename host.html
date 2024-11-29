@@ -1,0 +1,17 @@
+<video id="hostVideo" autoplay muted></video>
+<script>
+const videoElement = document.getElementById('hostVideo');
+navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+    videoElement.srcObject = stream;
+    const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+    recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+            const formData = new FormData();
+            formData.append('chunk', event.data);
+            formData.append('room_id', '12345');
+            fetch('/upload-video.php', { method: 'POST', body: formData });
+        }
+    };
+    recorder.start(1000); // Send chunks every second.
+});
+</script>
