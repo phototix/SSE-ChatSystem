@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         convertVideo($filePath, $outputFile); // Convert the video
 
         // Optionally, you can delete the original video after conversion
-        // unlink($filePath); // Uncomment if you want to delete the original file after conversion
+        unlink($filePath); // Uncomment if you want to delete the original file after conversion
 
         // Send a success response
         echo json_encode(['status' => 'success', 'message' => 'File uploaded and converted successfully']);
