@@ -41,53 +41,71 @@
     <button onclick="sendMessage()">Send Message</button>
 
     <script>
-        const messagesContainer = document.getElementById('messages');
-        const usernameInput = document.getElementById('username');
-        const messageInput = document.getElementById('message');
+        let lastMessageTimestamp = 0; // Keep track of the last message received
+        let isPolling = false; // Prevent concurrent polling
+        const pollingInterval = 2000; // Poll every 2 seconds
 
-        // Function to send a message to the server
-        function sendMessage() {
-            const username = usernameInput.value;
-            const message = messageInput.value;
+        // Function to fetch new messages
+        async function fetchMessages() {
+            if (isPolling) return; // Avoid overlapping polling
+            isPolling = true;
 
-            if (username && message) {
-                const formData = new FormData();
-                formData.append('username', username);
-                formData.append('message', message);
+            try {
+                const response = await fetch(`/functions/chat.php?room=${roomId}&timestamp=${lastMessageTimestamp}`);
+                const messages = await response.json();
 
-                fetch('functions/send_message.php', {
-                    method: 'POST',
-                    body: formData
-                }).then(() => {
-                    messageInput.value = '';  // Clear input after sending
-                }).catch(error => {
-                    console.error('Error sending message:', error);
-                });
+                // Process only new messages
+                if (messages.length > 0) {
+                    messages.forEach(message => appendMessage(message));
+                    lastMessageTimestamp = messages[messages.length - 1].timestamp; // Update the timestamp
+                }
+            } catch (error) {
+                console.error('Error fetching messages:', error);
+            } finally {
+                isPolling = false;
             }
         }
 
-        // Function to listen for new messages via SSE
-        function listenForMessages() {
-            const eventSource = new EventSource('functions/chat.php');
+        // Append new message to the chat box
+        function appendMessage(message) {
+            const messagesDiv = document.getElementById('messages');
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `${message.sender}: ${message.text}`;
+            messagesDiv.appendChild(messageElement);
 
-            eventSource.onmessage = function(event) {
-                const messageData = JSON.parse(event.data);
-                const messageElement = document.createElement('div');
-                messageElement.textContent = `${messageData.username}: ${messageData.message}`;
-                messagesContainer.appendChild(messageElement);
-
-                // Scroll to the latest message
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            };
-
-            eventSource.onerror = function() {
-                console.error('Error with SSE connection');
-                eventSource.close();
-            };
+            // Optional: Scroll to the bottom of the chat box
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
 
-        // Start listening for messages as soon as the page loads
-        listenForMessages();
+        // Start polling for messages
+        setInterval(fetchMessages, pollingInterval);
+
+        // Send a new message
+        async function sendMessage(text) {
+            const data = { room: roomId, sender: 'User', text };
+
+            try {
+                await fetch('/functions/send_message.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
+        }
+
+        // Example: Sending a message
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const textInput = document.getElementById('messageInput');
+            const messageText = textInput.value.trim();
+
+            if (messageText) {
+                sendMessage(messageText);
+                textInput.value = '';
+            }
+        });
+
     </script>
 
 </body>
