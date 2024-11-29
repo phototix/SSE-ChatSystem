@@ -8,37 +8,26 @@ const mediaSource = new MediaSource();
 videoElement.src = URL.createObjectURL(mediaSource);
 
 let sourceBuffer;
+
 mediaSource.addEventListener('sourceopen', () => {
-    // Check if VP8 codec is correct, or try other codecs like VP9 or H.264
-    try {
-        sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp9"');
-    } catch (error) {
-        console.error('Error adding source buffer:', error);
-    }
+    // Ensure you use the correct MIME type and codec
+    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"'); // or 'vp9'
 });
 
-// Function to fetch video and append it to the buffer
-const fetchAndAppendVideo = async () => {
-    try {
-        const response = await fetch(`/fetch-video.php?room_id=${roomId}`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch video');
-        }
-        
-        const blob = await response.blob();
-        
-        if (sourceBuffer && !sourceBuffer.updating) {
-            try {
-                sourceBuffer.appendBuffer(blob); // Append the video blob to the buffer
-            } catch (error) {
-                console.error('Error appending buffer:', error);
-            }
-        }
-    } catch (error) {
-        console.error('Error in fetch operation:', error);
-    }
-};
+setInterval(() => {
+    fetch(`/fetch-video.php?room_id=${roomId}`)
+        .then((response) => response.blob())
+        .then((blob) => {
+            console.log('Received Blob:', blob);
+            console.log('Blob size:', blob.size); // Log the size of each chunk
 
-// Fetch new video every 2 seconds
-setInterval(fetchAndAppendVideo, 2000);
+            if (sourceBuffer && !sourceBuffer.updating) {
+                // Only append if the buffer is not currently updating
+                sourceBuffer.appendBuffer(blob); // Append the video blob to the buffer
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching video blob:', error);
+        });
+}, 2000); // Fetch new video every 2 seconds
 </script>

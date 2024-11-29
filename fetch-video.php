@@ -3,30 +3,40 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: video/webm');
 
-// Ensure the room_id is passed correctly
-$roomId = $_GET['room_id'];
+if (isset($_GET['room_id'])) {
+    $roomId = $_GET['room_id'];
+    
+    // Ensure the uploaded files are in a valid directory and have the right extension
+    $directory = 'uploads/';
+    $filePattern = $directory . $roomId . '-*.webm';  // Match all video files for this room
+    $files = glob($filePattern);
 
-// Get the list of video files for the room
-$files = glob("uploads/$roomId-*.webm"); // Adjust extension to your file type
+    if (count($files) > 0) {
+        // Select the most recent video chunk (or implement your own chunk fetching logic)
+        $fileToServe = end($files); // Get the most recently added file
 
-if (count($files) > 0) {
-    // Sort files by modification time
-    usort($files, function($a, $b) {
-        return filemtime($b) - filemtime($a);
-    });
-
-    $latestFile = $files[0];
-
-    // Check if the latest file exists
-    if (file_exists($latestFile)) {
-        header('Content-Type: video/webm');
-        readfile($latestFile); // Serve the video file
+        // Check if the file exists and is readable
+        if (file_exists($fileToServe) && is_readable($fileToServe)) {
+            // Send the file to the client as a blob
+            header('Content-Type: video/webm');
+            header('Content-Length: ' . filesize($fileToServe)); // Set the correct file size
+            readfile($fileToServe);
+            exit; // Stop the script after serving the file
+        } else {
+            // Handle file not found or unreadable
+            http_response_code(404);
+            echo "Video file not found or unreadable.";
+            exit;
+        }
     } else {
+        // Handle no video files found
         http_response_code(404);
-        echo "Video file not found.";
+        echo "No video files found for this room.";
+        exit;
     }
 } else {
-    http_response_code(404);
-    echo "No video files available.";
+    http_response_code(400);
+    echo "Missing room ID parameter.";
+    exit;
 }
 ?>
