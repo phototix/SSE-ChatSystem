@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__) . '/chatserver/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
