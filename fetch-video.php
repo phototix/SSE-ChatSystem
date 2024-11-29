@@ -6,7 +6,7 @@ if (isset($_GET['room_id'])) {
     // Ensure the uploaded files are in a valid directory and have the right extension
     $directory = 'uploads/';
     // Match all converted video files for this room with '-converted.webm' suffix
-    $filePattern = $directory . $roomId . '-*-converted.webm';  // Match all '-converted.webm' files for this room
+    $filePattern = $directory . $roomId . '-*.webm';  // Match all '-converted.webm' files for this room
     $files = glob($filePattern);
 
     if (count($files) > 0) {
