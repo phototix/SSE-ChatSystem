@@ -11,7 +11,7 @@ let sourceBuffer;
 mediaSource.addEventListener('sourceopen', () => {
     // Check if VP8 codec is correct, or try other codecs like VP9 or H.264
     try {
-        sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
+        sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="h264"');
     } catch (error) {
         console.error('Error adding source buffer:', error);
     }
