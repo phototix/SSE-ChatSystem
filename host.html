@@ -2,17 +2,22 @@
 <script>
 const videoElement = document.getElementById('hostVideo');
 const roomId = new URLSearchParams(window.location.search).get('id');
-navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then((stream) => {
     videoElement.srcObject = stream;
     const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
     recorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-            const formData = new FormData();
-            formData.append('chunk', event.data);
-            formData.append('room_id', roomId);
-            fetch('/upload-video.php', { method: 'POST', body: formData });
-        }
+      if (event.data.size > 0) {
+        const formData = new FormData();
+        formData.append('chunk', event.data);
+        formData.append('room_id', roomId);
+        fetch('/upload-video.php', { method: 'POST', body: formData });
+      }
     };
     recorder.start(1000); // Send chunks every second.
-});
+  })
+  .catch((error) => {
+    console.error('Error accessing webcam: ', error);
+  });
+
 </script>
