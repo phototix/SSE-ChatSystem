@@ -1,9 +1,15 @@
 <?php
 // Function to delete files older than 2 minutes (120 seconds)
 function deleteOldFiles($directory) {
-    $files = glob("$directory/*.webm"); // Match all .webm files in the directory
+    // Get all .webm files in the directory except for index.php
+    $files = glob("$directory/*.webm");
 
     foreach ($files as $file) {
+        // Skip index.php and check if the file is older than 2 minutes
+        if (basename($file) === 'index.php') {
+            continue; // Skip the index.php file
+        }
+
         // Check if the file is older than 2 minutes (120 seconds)
         if (time() - filemtime($file) > 120) {
             // Delete the file
