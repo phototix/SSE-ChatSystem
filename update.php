@@ -1,5 +1,5 @@
 <?php
-require_once '../configs/database.php';
+require_once 'configs/database.php';
 
 try {
     $pdo = connectDatabase();
