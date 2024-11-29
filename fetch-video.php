@@ -1,8 +1,5 @@
 <?php
 // fetch-video.php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: video/webm');
-
 if (isset($_GET['room_id'])) {
     $roomId = $_GET['room_id'];
     
