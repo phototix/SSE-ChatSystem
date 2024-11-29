@@ -24,7 +24,7 @@
             window.history.replaceState(null, '', newUrl);
         }
 
-        const socket = new WebSocket('ws://chatserver.brandon.my:8080');
+        const socket = new WebSocket('wss://chatserver.brandon.my/ws/');
         const messageInput = document.getElementById('message');
         const sendButton = document.getElementById('send');
         const chatContainer = document.getElementById('chat');
