@@ -9,16 +9,36 @@ videoElement.src = URL.createObjectURL(mediaSource);
 
 let sourceBuffer;
 mediaSource.addEventListener('sourceopen', () => {
-    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"'); // Adjust codec if necessary
+    // Check if VP8 codec is correct, or try other codecs like VP9 or H.264
+    try {
+        sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
+    } catch (error) {
+        console.error('Error adding source buffer:', error);
+    }
 });
 
-setInterval(() => {
-    fetch(`/fetch-video.php?room_id=${roomId}`)
-        .then((response) => response.blob())
-        .then((blob) => {
-            if (sourceBuffer && !sourceBuffer.updating) {
+// Function to fetch video and append it to the buffer
+const fetchAndAppendVideo = async () => {
+    try {
+        const response = await fetch(`/fetch-video.php?room_id=${roomId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch video');
+        }
+        
+        const blob = await response.blob();
+        
+        if (sourceBuffer && !sourceBuffer.updating) {
+            try {
                 sourceBuffer.appendBuffer(blob); // Append the video blob to the buffer
+            } catch (error) {
+                console.error('Error appending buffer:', error);
             }
-        });
-}, 2000); // Fetch new video every 2 seconds
+        }
+    } catch (error) {
+        console.error('Error in fetch operation:', error);
+    }
+};
+
+// Fetch new video every 2 seconds
+setInterval(fetchAndAppendVideo, 2000);
 </script>
