@@ -4,16 +4,13 @@ require_once 'configs/database.php';
 try {
     $pdo = connectDatabase();
 
-    // Check and add `timestamp` column if it doesn't exist
-    $alterMessagesTable = "
-        ALTER TABLE messages
-        ADD COLUMN IF NOT EXISTS `timestamp` BIGINT NOT NULL DEFAULT UNIX_TIMESTAMP()
-    ";
-    $pdo->exec($alterMessagesTable);
+    // Drop the `messages` table if it exists
+    $dropTableQuery = "DROP TABLE IF EXISTS messages";
+    $pdo->exec($dropTableQuery);
 
-    // Optional: Create messages table if it doesn't exist
+    // Create the `messages` table
     $createMessagesTable = "
-        CREATE TABLE IF NOT EXISTS messages (
+        CREATE TABLE messages (
             id INT AUTO_INCREMENT PRIMARY KEY,
             room VARCHAR(255) NOT NULL,
             sender VARCHAR(255) NOT NULL,
@@ -23,7 +20,7 @@ try {
     ";
     $pdo->exec($createMessagesTable);
 
-    echo "Database schema update completed successfully.";
+    echo "Database schema recreated successfully.";
 } catch (PDOException $e) {
     echo "Error updating database schema: " . $e->getMessage();
 }
