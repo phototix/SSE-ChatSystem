@@ -8,17 +8,34 @@ const mediaSource = new MediaSource();
 videoElement.src = URL.createObjectURL(mediaSource);
 
 let sourceBuffer;
+let isAppending = false;
+
 mediaSource.addEventListener('sourceopen', () => {
-    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"'); // Adjust codec if necessary
+    // Use the correct MIME type and codec for the video
+    sourceBuffer = mediaSource.addSourceBuffer('video/mp4');
 });
 
 setInterval(() => {
+    if (isAppending) return; // Prevent new appends while the previous one is processing
+
     fetch(`/fetch-video.php?room_id=${roomId}`)
-        .then((response) => response.blob())
-        .then((blob) => {
-            if (sourceBuffer && !sourceBuffer.updating) {
-                sourceBuffer.appendBuffer(blob); // Append the video blob to the buffer
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch video');
             }
+            return response.blob();
+        })
+        .then((blob) => {
+            if (sourceBuffer && mediaSource.readyState === 'open' && !sourceBuffer.updating) {
+                isAppending = true;
+                sourceBuffer.appendBuffer(blob);
+                sourceBuffer.addEventListener('updateend', () => {
+                    isAppending = false; // Allow the next chunk to be appended
+                });
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching video:', error);
         });
 }, 2000); // Fetch new video every 2 seconds
 </script>
